@@ -1,0 +1,134 @@
+:root {
+  --container-width: 1200px; /* Độ rộng cố định để căn thẳng hàng */
+  --accent-color: #F8B4A6;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #fff;
+  color: #666;
+}
+
+/* --- Container chung để căn thẳng hàng dọc --- */
+.contact-container, .footer-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Contact Section --- */
+.contact {
+  padding: 100px 0;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.contact-image { flex: 1.2; }
+.contact-image img {
+  width: 100%;
+  border-radius: 45px; /* Bo góc lớn chuẩn mẫu */
+  display: block;
+}
+
+.contact-text { flex: 1; }
+.contact-text h2 {
+  font-size: 38px;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.main-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 500px; /* Ép chữ xuống hàng giống mẫu */
+}
+
+.sub-desc {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.email-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  padding: 8px 8px 8px 25px;
+  border-radius: 50px;
+  background: #fff;
+}
+
+.email-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.btn-send {
+  width: 42px;
+  height: 42px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* --- Footer Section --- */
+.footer {
+  background-color: #0c0c0c; /* Màu đen chuẩn thiết kế */
+  padding: 80px 0 40px;
+  color: #fff;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.footer-col.brand h3 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li { margin-bottom: 15px; }
+.footer-col a {
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover { color: #fff; }
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  padding-top: 40px;
+  color: #444;
+  font-size: 12px;
+}

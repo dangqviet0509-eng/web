@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture - Shady Rhymes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --accent: #F8B4A6; 
+      --text-main: #333;
+      --text-sub: #777;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fff;
+    }
+
+    /* --- SECTION: WHY CHOOSING US --- */
+    .features { padding: 80px 20px; text-align: center; }
+    .feature-list { display: flex; justify-content: center; gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .feature { 
+      flex: 1; padding: 40px 30px; border-radius: 20px; text-align: left; 
+      border: 1px solid #eee; transition: 0.3s; 
+    }
+    .feature:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 15px 30px rgba(248,180,166,0.2); }
+    
+    .icon-box { 
+      width: 45px; height: 45px; border-radius: 12px; border: 1px solid #eee; 
+      display: flex; align-items: center; justify-content: center; 
+      margin-bottom: 20px; color: var(--accent); 
+    }
+
+    /* --- SECTION: VISUALIZE (KHU VỰC CẦN GIỮ NGUYÊN CHỮ) --- */
+    .visualize {
+      display: flex; padding: 100px 80px; gap: 60px; max-width: 1300px; margin: 0 auto; align-items: flex-start;
+    }
+
+    .visualize-text { flex: 1; }
+    .visualize-text h2 { font-size: 38px; margin-bottom: 20px; color: #3d3d3d; }
+    
+    /* Nội dung giới thiệu đầy đủ của bạn */
+    .visualize-description {
+      font-size: 15px; line-height: 1.8; color: var(--text-sub); margin-bottom: 40px;
+    }
+
+    .category { border-bottom: 1px solid #eee; padding: 15px 0; }
+
+    .category-header {
+      display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+    }
+
+    .category h3 { font-size: 18px; font-weight: 500; margin: 0; color: #444; }
+    .symbol { color: var(--accent); font-size: 22px; transition: 0.3s; }
+
+    /* Hiệu ứng đóng mở cho nội dung */
+    .category-content { 
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; 
+    }
+    .category.active .category-content { max-height: 200px; }
+    
+    /* Nội dung mô tả Modern đầy đủ của bạn */
+    .category-content p {
+      font-size: 14.5px; color: var(--text-sub); padding: 15px 0; line-height: 1.7; margin: 0;
+    }
+
+    .see-more { color: var(--accent); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 25px; }
+
+    .visualize-image img { width: 100%; max-width: 550px; border-radius: 40px; }
+
+    @media (max-width: 992px) {
+      .visualize { flex-direction: column; padding: 40px 20px; }
+      .feature-list { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="features">
+    <h2>Why Choosing Us</h2>
+    <div class="feature-list">
+      <div class="feature">
+        <div class="icon-box"><i data-lucide="shield-check"></i></div>
+        <h3>Professionalism</h3>
+        <p>We deliver the final work with great professional way.</p>
+        <a href="#" style="color:var(--accent); text-decoration:none; font-weight:600;">more info</a>
+      </div>
+      <div class="feature">
+        <div class="icon-box"><i data-lucide="layers"></i></div>
+        <h3>Smooth workflow</h3>
+        <p>We provide the most easy smooth workflow of interior design.</p>
+        <a href="#" style="color:var(--accent); text-decoration:none; font-weight:600;">more info</a>
+      </div>
+      <div class="feature">
+        <div class="icon-box"><i data-lucide="calendar"></i></div>
+        <h3>Trusted Platform</h3>
+        <p>People trust us since we opened the company.</p>
+        <a href="#" style="color:var(--accent); text-decoration:none; font-weight:600;">more info</a>
+      </div>
+      <div class="feature">
+        <div class="icon-box"><i data-lucide="users"></i></div>
+        <h3>Qualified employee</h3>
+        <p>Our employees are the best of the field from the city.</p>
+        <a href="#" style="color:var(--accent); text-decoration:none; font-weight:600;">more info</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visualize">
+    <div class="visualize-text">
+      <h2>Visualize your ideas with us</h2>
+      
+      <p class="visualize-description">
+        We are ready to help you build and also realize the room design that you dream of, with our experts and also the best category recommendations from us.
+      </p>
+
+      <div class="categories">
+        <div class="category active">
+          <div class="category-header">
+            <h3>Modern</h3>
+            <span class="symbol">−</span>
+          </div>
+          <div class="category-content">
+            <p>Modern design is a term in the design world that refers to a house with a clean design, simple color choices, the use of materials including metal, glass, and steel, and is usually accompanied by clean lines.</p>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <h3>Contemporary</h3>
+            <span class="symbol">+</span>
+          </div>
+          <div class="category-content"><p>Nội dung đang được cập nhật...</p></div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <h3>Minimalis</h3>
+            <span class="symbol">+</span>
+          </div>
+          <div class="category-content"><p>Nội dung đang được cập nhật...</p></div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <h3>Industrial</h3>
+            <span class="symbol">+</span>
+          </div>
+          <div class="category-content"><p>Nội dung đang được cập nhật...</p></div>
+        </div>
+      </div>
+      
+      <a href="#" class="see-more">See more catagory</a>
+    </div>
+
+    <div class="visualize-image">
+      <img src="z7562890656233_396c01da0e308f1488ca4606335e83ad.jpg" alt="Furniture Image">
+    </div>
+  </section>
+
+  <script>
+    lucide.createIcons();
+
+    // Script xử lý đóng mở các mục
+    document.querySelectorAll('.category-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const parent = header.parentElement;
+        const symbol = header.querySelector('.symbol');
+        
+        parent.classList.toggle('active');
+        symbol.textContent = parent.classList.contains('active') ? '−' : '+';
+      });
+    });
+  </script>
+
+</body>
+</html>
