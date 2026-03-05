@@ -1,4 +1,5 @@
-/* --- Cấu hình chung --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,10 +8,9 @@
 }
 
 :root {
-    --accent-color: #F8B4A6; /* Màu hồng cam chủ đạo */
+    --accent-color: #F8B4A6; 
 }
 
-/* Phần nền Hero (Top Section) */
 .top-section {
     position: relative;
     width: 100%;
@@ -23,7 +23,6 @@
     overflow: hidden;
 }
 
-/* --- Navbar --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -32,14 +31,28 @@
     max-width: 1400px;
     margin: 0 auto;
 }
-
 .logo {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     flex: 1;
 }
 
+.logo-star {
+    height: 26px;
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif; 
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    text-transform: lowercase;
+    letter-spacing: -0.5px;
+}
+
+/* Menu & Navigation */
 .menu {
     display: flex;
     list-style: none;
@@ -53,43 +66,14 @@
     color: rgba(255, 255, 255, 0.8);
     font-size: 15px;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-.menu li a:hover {
-    color: var(--accent-color);
-}
+.menu li a:hover { color: var(--accent-color); }
 
-.nav-icons {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
+.nav-icons { flex: 1; display: flex; justify-content: flex-end; }
+.cart-icon { width: 24px; height: 24px; stroke: white; }
 
-.cart-wrapper {
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.cart-icon {
-    width: 24px;
-    height: 24px;
-    stroke: white;
-}
-
-.cart-badge {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    width: 8px;
-    height: 8px;
-    background: var(--accent-color);
-    border-radius: 50%;
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
-}
-
-/* --- Hero Section --- */
 .hero {
     height: calc(100vh - 150px);
     display: flex;
@@ -101,10 +85,9 @@
 }
 
 .hero-text h1 {
-    font-size: clamp(32px, 5vw, 60px); /* Tự động co giãn cỡ chữ theo màn hình */
+    font-size: clamp(32px, 5vw, 64px); 
     font-weight: 700;
-    max-width: 850px;
-    line-height: 1.1;
+    line-height: 1.15;
     margin-bottom: 25px;
     letter-spacing: -1.5px;
 }
@@ -115,23 +98,20 @@
     margin: 0 auto 45px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.85);
-    font-weight: 300;
 }
-
-/* --- Thanh tìm kiếm kiểu Glassmorphism --- */
 .search-box {
     display: flex;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 6px 6px 6px 28px;
     border-radius: 50px;
     width: 100%;
-    max-width: 460px;
+    max-width: 480px;
     margin: 0 auto;
     align-items: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .search-box input {
@@ -140,63 +120,112 @@
     outline: none;
     color: white;
     flex: 1;
-    font-size: 15px;
-    padding: 10px 0;
+    font-size: 16px;
 }
 
 .search-box input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .search-btn {
     background: white;
     border: none;
-    width: 44px;
-    height: 44px;
+    width: 46px; 
+    height: 46px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .search-btn:hover {
-    background: var(--accent-color);
     transform: scale(1.05);
+    background-color: var(--accent-color);
 }
 
-.search-svg {
-    width: 18px;
-    height: 18px;
-    color: #333;
-}
-
-/* ======================================================
-   CẤU HÌNH MOBILE RESPONSIVE
-   ====================================================== */
-
+/* Mobile Responsive */
 @media (max-width: 992px) {
     .navbar { padding: 25px 40px; }
-    .menu { display: none; } /* Ẩn menu chữ trên mobile */
+    .menu { display: none; } 
     .hero-text h1 { font-size: 42px; }
 }
+/* --- PHẦN BỔ SUNG BREAKPOINTS --- */
 
-@media (max-width: 600px) {
-    .navbar { padding: 20px 20px; }
-    .hero-text h1 { 
-        font-size: 34px; 
-        letter-spacing: -0.5px;
+/* 1. Màn hình Laptop nhỏ / Tablet lớn (Dưới 1200px) */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 25px 40px;
     }
+    .menu {
+        gap: 30px; /* Thu hẹp khoảng cách menu */
+    }
+}
+
+/* 2. Tablet (Dưới 992px) - Giữ nguyên yêu cầu của bạn và tối ưu thêm */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+    
+    .menu { 
+        display: none; /* Ẩn menu chính theo code gốc của bạn */
+    }
+
+    /* Bạn có thể thêm một nút Menu Hamburger ở đây nếu cần trong tương lai */
+    
+    .hero-text h1 {
+        font-size: 48px; /* Cố định kích thước nếu clamp chưa đủ nhỏ */
+    }
+}
+
+/* 3. Mobile lớn (Dưới 768px) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
     .hero-text p {
         font-size: 15px;
         margin-bottom: 30px;
     }
+
     .search-box {
-        width: 100%;
+        max-width: 90%; /* Để thanh tìm kiếm rộng hơn trên mobile */
         padding-left: 20px;
     }
-    .top-section {
-        height: 100vh; /* Giữ full màn hình trên mobile */
+}
+
+/* 4. Điện thoại nhỏ (Dưới 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .logo-text {
+        font-size: 20px; /* Thu nhỏ logo một chút */
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .search-box {
+        height: 50px;
+    }
+
+    .search-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-star {
+        height: 20px;
     }
 }

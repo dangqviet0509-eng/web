@@ -1,5 +1,5 @@
 :root {
-  --container-width: 1200px; /* Độ rộng cố định để căn thẳng hàng */
+  --container-width: 1200px; 
   --accent-color: #F8B4A6;
 }
 
@@ -31,7 +31,7 @@ body {
 .contact-image { flex: 1.2; }
 .contact-image img {
   width: 100%;
-  border-radius: 45px; /* Bo góc lớn chuẩn mẫu */
+  border-radius: 45px;
   display: block;
 }
 
@@ -48,7 +48,7 @@ body {
   font-size: 15px;
   line-height: 1.8;
   margin-bottom: 30px;
-  max-width: 500px; /* Ép chữ xuống hàng giống mẫu */
+  max-width: 500px;
 }
 
 .sub-desc {
@@ -60,10 +60,11 @@ body {
 .email-box {
   display: flex;
   align-items: center;
-  border: 1px solid #f0f0f0;
+  /* Đổi viền và nền sang màu hồng nhạt */
+  border: 1px solid #FDEEEB; 
+  background-color: #FEF9F8;
   padding: 8px 8px 8px 25px;
   border-radius: 50px;
-  background: #fff;
 }
 
 .email-box input {
@@ -71,6 +72,14 @@ body {
   border: none;
   outline: none;
   font-size: 14px;
+  /* Cho nền trong suốt để hiện màu hồng của box */
+  background: transparent; 
+}
+
+/* Thêm màu cho chữ "Insert your email address" */
+.email-box input::placeholder {
+  color: #F8B4A6;
+  opacity: 0.8;
 }
 
 .btn-send {
@@ -82,11 +91,14 @@ body {
   border-radius: 50%;
   cursor: pointer;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- Footer Section --- */
 .footer {
-  background-color: #0c0c0c; /* Màu đen chuẩn thiết kế */
+  background-color: #0c0c0c;
   padding: 80px 0 40px;
   color: #fff;
 }
@@ -131,4 +143,50 @@ body {
   padding-top: 40px;
   color: #444;
   font-size: 12px;
+}
+
+/* ======================================================
+    BREAKPOINTS RESPONSIVE
+   ====================================================== */
+
+/* Desktop lớn (≥1200px) */
+@media (min-width: 1200px) {
+  .contact-text h2 { font-size: 42px; }
+  .footer-col.brand h3 { font-size: 24px; }
+}
+
+/* Tablet ngang (≤992px) */
+@media (max-width: 992px) {
+  .contact-container { flex-direction: column; gap: 40px; }
+  .contact { padding: 80px 0; }
+  .contact-text h2 { font-size: 32px; }
+  .footer-columns { flex-wrap: wrap; gap: 40px; }
+}
+
+/* Tablet dọc (≤768px) */
+@media (max-width: 768px) {
+  .contact { padding: 60px 0; }
+  .contact-text h2 { font-size: 28px; }
+  .main-desc { font-size: 14px; }
+  .footer-columns { flex-direction: column; gap: 30px; }
+  .footer-col h4 { font-size: 15px; }
+}
+
+/* Mobile nhỏ (≤600px) */
+@media (max-width: 600px) {
+  .contact { padding: 50px 0; }
+  .contact-text h2 { font-size: 24px; }
+  .main-desc { font-size: 13.5px; }
+  .sub-desc { font-size: 13px; }
+  .footer { padding: 60px 0 30px; }
+  .footer-bottom { font-size: 11px; }
+}
+
+/* Mobile rất nhỏ (≤480px) */
+@media (max-width: 480px) {
+  .contact { padding: 40px 0; }
+  .contact-text h2 { font-size: 22px; }
+  .main-desc { font-size: 13px; }
+  .footer-col h4 { font-size: 14px; }
+  .footer-col a { font-size: 13px; }
 }

@@ -51,7 +51,7 @@ body {
 }
 
 .product .rating {
-  color: #FFD700; /* vàng cho sao */
+  color: #FFD700; 
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -60,4 +60,46 @@ body {
   font-size: 16px;
   font-weight: bold;
   color: #333;
+}
+
+/* ======================================================
+   BREAKPOINTS RESPONSIVE
+   ====================================================== */
+
+/* Desktop lớn (≥1200px) */
+@media (min-width: 1200px) {
+  .shop h2 { font-size: 36px; }
+  .product h3 { font-size: 22px; }
+}
+
+/* Tablet ngang (≤992px) */
+@media (max-width: 992px) {
+  .shop { padding: 40px 40px; }
+  .product-list { flex-wrap: wrap; }
+  .product { flex: 0 0 calc(50% - 30px); }
+  .shop h2 { font-size: 28px; }
+}
+
+/* Tablet dọc (≤768px) */
+@media (max-width: 768px) {
+  .shop { padding: 30px 20px; }
+  .product-list { flex-direction: column; gap: 20px; }
+  .product { flex: 1; }
+  .shop h2 { font-size: 26px; }
+}
+
+/* Mobile nhỏ (≤600px) */
+@media (max-width: 600px) {
+  .shop h2 { font-size: 24px; margin-bottom: 30px; }
+  .product h3 { font-size: 18px; }
+  .product .price { font-size: 15px; }
+}
+
+/* Mobile rất nhỏ (≤480px) */
+@media (max-width: 480px) {
+  .shop { padding: 20px 15px; }
+  .shop h2 { font-size: 22px; }
+  .product { padding: 15px; }
+  .product h3 { font-size: 16px; }
+  .product .category { font-size: 13px; }
 }

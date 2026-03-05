@@ -27,14 +27,12 @@ body {
 .testimonial-list {
   display: flex;
   gap: 60px;
-  /* Đảm bảo các cột có chiều cao bằng nhau */
   align-items: stretch; 
 }
 
 .testimonial {
   flex: 1;
   text-align: left;
-  /* Quan trọng: Biến khối này thành flex container để đẩy ảnh xuống dưới */
   display: flex;
   flex-direction: column;
 }
@@ -53,12 +51,10 @@ body {
   margin-bottom: 35px;
 }
 
-/* PHẦN SỬA LỖI LỆCH ẢNH */
 .author {
   display: flex;
   align-items: center;
   gap: 15px;
-  /* margin-top: auto sẽ đẩy khối này xuống sát đáy của cột */
   margin-top: auto; 
 }
 
@@ -81,7 +77,47 @@ body {
   color: #999999;
 }
 
+/* ======================================================
+   BREAKPOINTS RESPONSIVE
+   ====================================================== */
+
+/* Desktop lớn (≥1200px) */
+@media (min-width: 1200px) {
+  .section-title { font-size: 38px; }
+  .testimonial h3 { font-size: 22px; }
+}
+
+/* Tablet ngang (≤992px) */
+@media (max-width: 992px) {
+  .testimonials { padding: 80px 5%; }
+  .testimonial-list { gap: 40px; }
+  .section-title { font-size: 30px; margin-bottom: 60px; }
+}
+
+/* Tablet dọc (≤768px) */
 @media (max-width: 768px) {
+  .testimonials { padding: 60px 20px; }
   .testimonial-list { flex-direction: column; gap: 50px; }
-  .author { margin-top: 0; } /* Reset trên mobile */
+  .section-title { font-size: 28px; }
+  .testimonial h3 { font-size: 18px; }
+  .testimonial p { font-size: 14px; }
+  .author { margin-top: 0; }
+}
+
+/* Mobile nhỏ (≤600px) */
+@media (max-width: 600px) {
+  .section-title { font-size: 24px; margin-bottom: 40px; }
+  .testimonial h3 { font-size: 17px; }
+  .testimonial p { font-size: 13.5px; }
+  .author img { width: 45px; height: 45px; }
+}
+
+/* Mobile rất nhỏ (≤480px) */
+@media (max-width: 480px) {
+  .testimonials { padding: 40px 15px; }
+  .section-title { font-size: 22px; }
+  .testimonial h3 { font-size: 16px; }
+  .testimonial p { font-size: 13px; }
+  .author-info strong { font-size: 13px; }
+  .author-info span { font-size: 11px; }
 }

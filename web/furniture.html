@@ -1,181 +1,405 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Furniture - Shady Rhymes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <style>
-    :root {
-      --accent: #F8B4A6; 
-      --text-main: #333;
-      --text-sub: #777;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #fff;
-    }
-
-    /* --- SECTION: WHY CHOOSING US --- */
-    .features { padding: 80px 20px; text-align: center; }
-    .feature-list { display: flex; justify-content: center; gap: 20px; max-width: 1200px; margin: 0 auto; }
-    .feature { 
-      flex: 1; padding: 40px 30px; border-radius: 20px; text-align: left; 
-      border: 1px solid #eee; transition: 0.3s; 
-    }
-    .feature:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 15px 30px rgba(248,180,166,0.2); }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture - Shady Rhymes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    .icon-box { 
-      width: 45px; height: 45px; border-radius: 12px; border: 1px solid #eee; 
-      display: flex; align-items: center; justify-content: center; 
-      margin-bottom: 20px; color: var(--accent); 
-    }
+    <style>
+        :root {
+            --accent: #F8B4A6; 
+            --accent-light: #FFF5F5; 
+            --text-main: #333;
+            --text-sub: #777;
+        }
 
-    /* --- SECTION: VISUALIZE (KHU VỰC CẦN GIỮ NGUYÊN CHỮ) --- */
-    .visualize {
-      display: flex; padding: 100px 80px; gap: 60px; max-width: 1300px; margin: 0 auto; align-items: flex-start;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
 
-    .visualize-text { flex: 1; }
-    .visualize-text h2 { font-size: 38px; margin-bottom: 20px; color: #3d3d3d; }
-    
-    /* Nội dung giới thiệu đầy đủ của bạn */
-    .visualize-description {
-      font-size: 15px; line-height: 1.8; color: var(--text-sub); margin-bottom: 40px;
-    }
+        body {
+            background: #fff;
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
 
-    .category { border-bottom: 1px solid #eee; padding: 15px 0; }
+        /* --- SECTION: WHY CHOOSING US --- */
+        .features { 
+            padding: 80px 20px; 
+            text-align: center; 
+        }
 
-    .category-header {
-      display: flex; justify-content: space-between; align-items: center; cursor: pointer;
-    }
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
 
-    .category h3 { font-size: 18px; font-weight: 500; margin: 0; color: #444; }
-    .symbol { color: var(--accent); font-size: 22px; transition: 0.3s; }
+        .feature-list { 
+            display: flex; 
+            justify-content: center; 
+            gap: 24px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        .feature { 
+            flex: 1; 
+            padding: 40px 30px; 
+            border-radius: 24px; 
+            text-align: left; 
+            border: 1px solid #f2f2f2; 
+            transition: 0.3s ease; 
+        }
 
-    /* Hiệu ứng đóng mở cho nội dung */
-    .category-content { 
-      max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; 
-    }
-    .category.active .category-content { max-height: 200px; }
-    
-    /* Nội dung mô tả Modern đầy đủ của bạn */
-    .category-content p {
-      font-size: 14.5px; color: var(--text-sub); padding: 15px 0; line-height: 1.7; margin: 0;
-    }
+        .feature:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--accent); 
+            box-shadow: 0 15px 30px rgba(248,180,166,0.15); 
+        }
+        
+        /* Container vòng tròn cho Icon PNG */
+        .icon-box { 
+            width: 56px; 
+            height: 56px; 
+            border-radius: 50%; 
+            background-color: var(--accent-light); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 24px;
+        }
 
-    .see-more { color: var(--accent); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 25px; }
+        /* Định dạng cho file ảnh PNG của bạn */
+        .feature-icon-png {
+            width: 28px; 
+            height: 28px;
+            object-fit: contain; /* Giữ ảnh không bị méo */
+        }
 
-    .visualize-image img { width: 100%; max-width: 550px; border-radius: 40px; }
+        .feature h3 { 
+            font-size: 20px; 
+            margin-bottom: 12px; 
+            font-weight: 600;
+        }
 
-    @media (max-width: 992px) {
-      .visualize { flex-direction: column; padding: 40px 20px; }
-      .feature-list { flex-direction: column; }
-    }
-  </style>
+        .feature p { 
+            font-size: 14.5px; 
+            color: var(--text-sub); 
+            margin-bottom: 20px; 
+            line-height: 1.6; 
+        }
+
+        .more-info { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 14px;
+        }
+
+        /* --- SECTION: VISUALIZE --- */
+        .visualize {
+            display: flex; 
+            padding: 100px 80px; 
+            gap: 60px; 
+            max-width: 1300px; 
+            margin: 0 auto; 
+            align-items: flex-start;
+        }
+
+        .visualize-text { flex: 1; }
+
+        /* Tiêu đề ngắt dòng chuẩn mẫu */
+        .visualize-text h2 { 
+            font-size: 40px; 
+            margin-bottom: 20px; 
+            color: #3d3d3d; 
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        
+        .visualize-description {
+            font-size: 15.5px; 
+            line-height: 1.8; 
+            color: var(--text-sub); 
+            margin-bottom: 40px;
+        }
+
+        /* Accordion Style */
+        .category { 
+            border-bottom: 1px solid #eee; 
+            padding: 18px 0; 
+        }
+
+        .category-header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            cursor: pointer;
+        }
+
+        .category h3 { 
+            font-size: 18px; 
+            font-weight: 600; 
+            color: #444; 
+        }
+
+        .symbol { 
+            color: var(--accent); 
+            font-size: 24px; 
+            font-weight: bold;
+        }
+
+        .category-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: all 0.4s ease; 
+        }
+
+        .category.active .category-content { 
+            max-height: 200px; 
+            padding-top: 15px;
+        }
+        
+        .category-content p {
+            font-size: 14.5px; 
+            color: var(--text-sub); 
+            line-height: 1.7; 
+        }
+
+        .see-more { 
+            color: var(--accent); 
+            font-weight: 700; 
+            text-decoration: none; 
+            display: inline-block; 
+            margin-top: 30px; 
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .see-more:hover { border-bottom-color: var(--accent); }
+
+        .visualize-image { flex: 1; }
+        .visualize-image img { 
+            width: 100%; 
+            border-radius: 40px; 
+            display: block;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .visualize { flex-direction: column; padding: 60px 20px; }
+            .feature-list { flex-direction: column; align-items: center; }
+            .feature { width: 100%; max-width: 500px; }
+            .visualize-text h2 { font-size: 32px; }
+        }
+        /* --- PHẦN BREAKPOINT ĐẦY ĐỦ --- */
+
+        /* 1. Tablet & Màn hình nhỏ (Dưới 1024px) */
+        @media (max-width: 1024px) {
+            .visualize {
+                padding: 60px 40px;
+                gap: 40px;
+            }
+            .feature-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Chia làm 2 cột thay vì hàng ngang */
+                gap: 20px;
+            }
+        }
+
+        /* 2. Tablet dọc & Mobile lớn (Dưới 768px) */
+        @media (max-width: 768px) {
+            .features {
+                padding: 60px 20px;
+            }
+
+            .features h2 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            /* Chuyển các tính năng thành 1 cột */
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            /* Visualize chuyển sang dạng dọc */
+            .visualize {
+                flex-direction: column;
+                padding: 50px 20px;
+                gap: 40px;
+            }
+
+            .visualize-text h2 {
+                font-size: 32px;
+            }
+
+            .visualize-image {
+                width: 100%;
+            }
+
+            .visualize-image img {
+                border-radius: 24px; /* Bo góc nhỏ hơn cho mobile */
+            }
+        }
+
+        /* 3. Điện thoại nhỏ (Dưới 480px) */
+        @media (max-width: 480px) {
+            .features h2 {
+                font-size: 24px;
+            }
+
+            .feature {
+                padding: 30px 20px;
+            }
+
+            .visualize-text h2 {
+                font-size: 28px;
+            }
+
+            .visualize-description {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .category h3 {
+                font-size: 16px;
+            }
+            
+            .see-more {
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+                border: 1px solid var(--accent);
+                border-radius: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <section class="features">
-    <h2>Why Choosing Us</h2>
-    <div class="feature-list">
-      <div class="feature">
-        <div class="icon-box"><i data-lucide="shield-check"></i></div>
-        <h3>Professionalism</h3>
-        <p>We deliver the final work with great professional way.</p>
-        <a href="#" style="color:var(--accent); text-decoration:none; font-weight:600;">more info</a>
-      </div>
-      <div class="feature">
-        <div class="icon-box"><i data-lucide="layers"></i></div>
-        <h3>Smooth workflow</h3>
-        <p>We provide the most easy smooth workflow of interior design.</p>
-        <a href="#" style="color:var(--accent); text-decoration:none; font-weight:600;">more info</a>
-      </div>
-      <div class="feature">
-        <div class="icon-box"><i data-lucide="calendar"></i></div>
-        <h3>Trusted Platform</h3>
-        <p>People trust us since we opened the company.</p>
-        <a href="#" style="color:var(--accent); text-decoration:none; font-weight:600;">more info</a>
-      </div>
-      <div class="feature">
-        <div class="icon-box"><i data-lucide="users"></i></div>
-        <h3>Qualified employee</h3>
-        <p>Our employees are the best of the field from the city.</p>
-        <a href="#" style="color:var(--accent); text-decoration:none; font-weight:600;">more info</a>
-      </div>
-    </div>
-  </section>
+    <section class="features">
+        <h2>Why Choosing Us</h2>
+        <div class="feature-list">
+            
+            <div class="feature">
+                <div class="icon-box">
+                    <img src="icon.png" alt="Professionalism" class="feature-icon-png">
+                </div>
+                <h3>Professionalism</h3>
+                <p>We deliver the final work with great professional way.</p>
+                <a href="#" class="more-info">more info</a>
+            </div>
 
-  <section class="visualize">
-    <div class="visualize-text">
-      <h2>Visualize your ideas with us</h2>
-      
-      <p class="visualize-description">
-        We are ready to help you build and also realize the room design that you dream of, with our experts and also the best category recommendations from us.
-      </p>
+            <div class="feature">
+                <div class="icon-box">
+                    <img src="icon (1).png" alt="Smooth workflow" class="feature-icon-png">
+                </div>
+                <h3>Smooth workflow</h3>
+                <p>We provide the most easy smooth workflow of interior design.</p>
+                <a href="#" class="more-info">more info</a>
+            </div>
 
-      <div class="categories">
-        <div class="category active">
-          <div class="category-header">
-            <h3>Modern</h3>
-            <span class="symbol">−</span>
-          </div>
-          <div class="category-content">
-            <p>Modern design is a term in the design world that refers to a house with a clean design, simple color choices, the use of materials including metal, glass, and steel, and is usually accompanied by clean lines.</p>
-          </div>
+            <div class="feature">
+                <div class="icon-box">
+                    <img src="icon (2).png" alt="Trusted Platform" class="feature-icon-png">
+                </div>
+                <h3>Trusted Platform</h3>
+                <p>People trust us since we opened the company.</p>
+                <a href="#" class="more-info">more info</a>
+            </div>
+
+            <div class="feature">
+                <div class="icon-box">
+                    <img src="icon (3).png" alt="Qualified employee" class="feature-icon-png">
+                </div>
+                <h3>Qualified employee</h3>
+                <p>Our employees are the best of the field from the city.</p>
+                <a href="#" class="more-info">more info</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="visualize">
+        <div class="visualize-text">
+            <h2>Visualize your ideas <br> with us</h2>
+            <p class="visualize-description">
+                We are ready to help you build and also realize the room design that you dream of, with our experts and also the best category recommendations from us.
+            </p>
+
+            <div class="categories">
+                <div class="category active">
+                    <div class="category-header">
+                        <h3>Modern</h3>
+                        <span class="symbol">−</span>
+                    </div>
+                    <div class="category-content">
+                        <p>Modern design is a term in the design world that refers to a house with a clean design, simple color choices, the use of materials including metal, glass, and steel, and is usually accompanied by clean lines.</p>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="category-header">
+                        <h3>Contemporary</h3>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="category-content">
+                        <p>Contemporary design refers to what is popular or used right now. It is more fluid and can include various styles.</p>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="category-header">
+                        <h3>Minimalis</h3>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="category-content">
+                        <p>Minimalism is about simplicity and removing unnecessary elements to focus on what's essential.</p>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="category-header">
+                        <h3>Industrial</h3>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="category-content">
+                        <p>Industrial style draws inspiration from old factories and industrial spaces with raw materials like brick and wood.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="see-more">See more catagory</a>
         </div>
 
-        <div class="category">
-          <div class="category-header">
-            <h3>Contemporary</h3>
-            <span class="symbol">+</span>
-          </div>
-          <div class="category-content"><p>Nội dung đang được cập nhật...</p></div>
+        <div class="visualize-image">
+            <img src="z7562890656233_396c01da0e308f1488ca4606335e83ad.jpg" alt="Furniture Image">
         </div>
+    </section>
 
-        <div class="category">
-          <div class="category-header">
-            <h3>Minimalis</h3>
-            <span class="symbol">+</span>
-          </div>
-          <div class="category-content"><p>Nội dung đang được cập nhật...</p></div>
-        </div>
+    <script>
+        // Xử lý đóng mở Accordion
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                const symbol = header.querySelector('.symbol');
+                
+                // Đóng các mục khác khi mở mục mới (Tùy chọn)
+                // document.querySelectorAll('.category').forEach(c => {
+                //    if(c !== parent) { c.classList.remove('active'); c.querySelector('.symbol').textContent = '+'; }
+                // });
 
-        <div class="category">
-          <div class="category-header">
-            <h3>Industrial</h3>
-            <span class="symbol">+</span>
-          </div>
-          <div class="category-content"><p>Nội dung đang được cập nhật...</p></div>
-        </div>
-      </div>
-      
-      <a href="#" class="see-more">See more catagory</a>
-    </div>
-
-    <div class="visualize-image">
-      <img src="z7562890656233_396c01da0e308f1488ca4606335e83ad.jpg" alt="Furniture Image">
-    </div>
-  </section>
-
-  <script>
-    lucide.createIcons();
-
-    // Script xử lý đóng mở các mục
-    document.querySelectorAll('.category-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const parent = header.parentElement;
-        const symbol = header.querySelector('.symbol');
-        
-        parent.classList.toggle('active');
-        symbol.textContent = parent.classList.contains('active') ? '−' : '+';
-      });
-    });
-  </script>
+                parent.classList.toggle('active');
+                symbol.textContent = parent.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
 
 </body>
 </html>
