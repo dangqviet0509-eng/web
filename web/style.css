@@ -16,7 +16,7 @@
     width: 100%;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), 
-                url('z7562920032259_772d43a041fd5fcb7003b732ec6be9d6.jpg');
+                url('image 3.png');
     background-size: cover;
     background-position: center;
     color: white;
@@ -27,9 +27,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 80px;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 35px 40px;
+    width: 100%;
 }
 .logo {
     display: flex;
@@ -67,7 +66,16 @@
     font-size: 15px;
     font-weight: 500;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px; 
 }
+.dropdown-icon {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px; 
+}
+
 
 .menu li a:hover { color: var(--accent-color); }
 
@@ -75,13 +83,15 @@
 .cart-icon { width: 24px; height: 24px; stroke: white; }
 
 .hero {
-    height: calc(100vh - 150px);
     display: flex;
     flex-direction: column;
+    justify-content: flex-start; 
+    
+    padding-top: 120px; 
+    
+    height: 100vh;
     align-items: center;
-    justify-content: center; 
     text-align: center;
-    padding: 0 20px;
 }
 
 .hero-text h1 {
@@ -94,10 +104,12 @@
 
 .hero-text p {
     font-size: 17px;
-    max-width: 620px;
+    font-weight: 300;
+    max-width: 540px;
     margin: 0 auto 45px;
-    line-height: 1.7;
+    line-height: 1.2;
     color: rgba(255, 255, 255, 0.85);
+    text-align: center;
 }
 .search-box {
     display: flex;
@@ -145,42 +157,38 @@
     background-color: var(--accent-color);
 }
 
-/* Mobile Responsive */
 @media (max-width: 992px) {
     .navbar { padding: 25px 40px; }
     .menu { display: none; } 
     .hero-text h1 { font-size: 42px; }
 }
-/* --- PHẦN BỔ SUNG BREAKPOINTS --- */
 
-/* 1. Màn hình Laptop nhỏ / Tablet lớn (Dưới 1200px) */
 @media (max-width: 1200px) {
     .navbar {
         padding: 25px 40px;
     }
     .menu {
-        gap: 30px; /* Thu hẹp khoảng cách menu */
+        gap: 30px;
     }
 }
 
-/* 2. Tablet (Dưới 992px) - Giữ nguyên yêu cầu của bạn và tối ưu thêm */
 @media (max-width: 992px) {
     .navbar {
         padding: 20px 30px;
     }
     
     .menu { 
-        display: none; /* Ẩn menu chính theo code gốc của bạn */
+        display: none; 
     }
 
-    /* Bạn có thể thêm một nút Menu Hamburger ở đây nếu cần trong tương lai */
+   
     
     .hero-text h1 {
-        font-size: 48px; /* Cố định kích thước nếu clamp chưa đủ nhỏ */
+        font-size: 48px; 
     }
 }
 
-/* 3. Mobile lớn (Dưới 768px) */
+
 @media (max-width: 768px) {
     .hero {
         padding: 0 15px;
@@ -197,19 +205,19 @@
     }
 
     .search-box {
-        max-width: 90%; /* Để thanh tìm kiếm rộng hơn trên mobile */
+        max-width: 90%; 
         padding-left: 20px;
     }
-}
+} 
 
-/* 4. Điện thoại nhỏ (Dưới 480px) */
+
 @media (max-width: 480px) {
     .navbar {
         padding: 15px 20px;
     }
 
     .logo-text {
-        font-size: 20px; /* Thu nhỏ logo một chút */
+        font-size: 20px; 
     }
 
     .hero-text h1 {
@@ -228,4 +236,668 @@
     .logo-star {
         height: 20px;
     }
+}
+        :root {
+            --accent: #F8B4A6; 
+            --accent-light: #FFF5F5; 
+            --text-main: #333;
+            --text-sub: #777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* --- SECTION: WHY CHOOSING US --- */
+        .features { 
+            padding: 80px 20px; 
+            text-align: center; 
+        }
+
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .feature-list { 
+            display: flex; 
+            justify-content: center; 
+            gap: 24px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        .feature { 
+            flex: 1; 
+            padding: 40px 30px; 
+            border-radius: 24px; 
+            text-align: left; 
+            border: 1px solid #f2f2f2; 
+            transition: 0.3s ease; 
+        }
+
+        .feature:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--accent); 
+            box-shadow: 0 15px 30px rgba(248,180,166,0.15); 
+        }
+        
+        .icon-box { 
+            width: 56px; 
+            height: 56px; 
+            border-radius: 50%; 
+            background-color: var(--accent-light); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 24px;
+        }
+
+        .feature-icon-png {
+            width: 28px; 
+            height: 28px;
+            object-fit: contain; 
+        }
+
+        .feature h3 { 
+            font-size: 20px; 
+            margin-bottom: 12px; 
+            font-weight: 600;
+        }
+
+        .feature p { 
+            font-size: 14.5px; 
+            color: var(--text-sub); 
+            margin-bottom: 20px; 
+            line-height: 1.6; 
+        }
+
+        .more-info { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 14px;
+        }
+
+        /* --- SECTION: VISUALIZE --- */
+        .visualize {
+            display: flex; 
+            padding: 100px 80px; 
+            gap: 60px; 
+            max-width: 1300px; 
+            margin: 0 auto; 
+            align-items: flex-start;
+        }
+
+        .visualize-text { flex: 1; }
+
+        .visualize-text h2 { 
+            font-size: 40px; 
+            margin-bottom: 20px; 
+            color: #3d3d3d; 
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        
+        .visualize-description {
+            font-size: 15.5px; 
+            line-height: 1.8; 
+            color: var(--text-sub); 
+            margin-bottom: 40px;
+        }
+
+        /* Accordion Style */
+        .category { 
+            border-bottom: 1px solid #eee; 
+            padding: 18px 0; 
+        }
+
+        .category-header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            cursor: pointer;
+        }
+
+        .category h3 { 
+            font-size: 18px; 
+            font-weight: 600; 
+            color: #444; 
+        }
+
+        .symbol { 
+            color: var(--accent); 
+            font-size: 24px; 
+            font-weight: bold;
+        }
+
+        .category-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: all 0.4s ease; 
+        }
+
+        .category.active .category-content { 
+            max-height: 200px; 
+            padding-top: 15px;
+        }
+        
+        .category-content p {
+            font-size: 14.5px; 
+            color: var(--text-sub); 
+            line-height: 1.7; 
+        }
+
+        .see-more { 
+            color: var(--accent); 
+            font-weight: 700; 
+            text-decoration: none; 
+            display: inline-block; 
+            margin-top: 30px; 
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .see-more:hover { border-bottom-color: var(--accent); }
+
+        .visualize-image { flex: 1; }
+        .visualize-image img { 
+            width: 100%; 
+            border-radius: 40px; 
+            display: block;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .visualize { flex-direction: column; padding: 60px 20px; }
+            .feature-list { flex-direction: column; align-items: center; }
+            .feature { width: 100%; max-width: 500px; }
+            .visualize-text h2 { font-size: 32px; }
+        }
+
+        @media (max-width: 1024px) {
+            .visualize {
+                padding: 60px 40px;
+                gap: 40px;
+            }
+            .feature-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                padding: 60px 20px;
+            }
+
+            .features h2 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            .visualize {
+                flex-direction: column;
+                padding: 50px 20px;
+                gap: 40px;
+            }
+
+            .visualize-text h2 {
+                font-size: 32px;
+            }
+
+            .visualize-image {
+                width: 100%;
+            }
+
+            .visualize-image img {
+                border-radius: 24px; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features h2 {
+                font-size: 24px;
+            }
+
+            .feature {
+                padding: 30px 20px;
+            }
+
+            .visualize-text h2 {
+                font-size: 28px;
+            }
+
+            .visualize-description {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .category h3 {
+                font-size: 16px;
+            }
+            
+            .see-more {
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+                border: 1px solid var(--accent);
+                border-radius: 8px;
+            }
+        }
+        body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #FFFFFF;
+  color: #333;
+}
+
+.shop {
+  padding: 60px 80px;
+}
+
+.shop h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.product {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.product .category {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.product .rating {
+  color: #FFD700; 
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ======================================================
+   BREAKPOINTS RESPONSIVE
+   ====================================================== */
+
+@media (min-width: 1200px) {
+  .shop h2 { font-size: 36px; }
+  .product h3 { font-size: 22px; }
+}
+
+@media (max-width: 992px) {
+  .shop { padding: 40px 40px; }
+  .product-list { flex-wrap: wrap; }
+  .product { flex: 0 0 calc(50% - 30px); }
+  .shop h2 { font-size: 28px; }
+}
+
+@media (max-width: 768px) {
+  .shop { padding: 30px 20px; }
+  .product-list { flex-direction: column; gap: 20px; }
+  .product { flex: 1; }
+  .shop h2 { font-size: 26px; }
+}
+
+@media (max-width: 600px) {
+  .shop h2 { font-size: 24px; margin-bottom: 30px; }
+  .product h3 { font-size: 18px; }
+  .product .price { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .shop { padding: 20px 15px; }
+  .shop h2 { font-size: 22px; }
+  .product { padding: 15px; }
+  .product h3 { font-size: 16px; }
+  .product .category { font-size: 13px; }
+}
+:root {
+  --text-dark: #333333;
+  --text-gray: #777777;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #ffffff;
+}
+
+.testimonials {
+  padding: 100px 8%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 34px;
+  color: var(--text-dark);
+  margin-bottom: 80px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.testimonial-list {
+  display: flex;
+  gap: 60px;
+  align-items: stretch; 
+}
+
+.testimonial {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial h3 {
+  font-size: 20px;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.testimonial p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 35px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto; 
+}
+
+.author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.author-info span {
+  font-size: 12px;
+  color: #999999;
+}
+
+/* ======================================================
+   BREAKPOINTS RESPONSIVE
+   ====================================================== */
+
+@media (min-width: 1200px) {
+  .section-title { font-size: 38px; }
+  .testimonial h3 { font-size: 22px; }
+}
+
+
+@media (max-width: 992px) {
+  .testimonials { padding: 80px 5%; }
+  .testimonial-list { gap: 40px; }
+  .section-title { font-size: 30px; margin-bottom: 60px; }
+}
+
+@media (max-width: 768px) {
+  .testimonials { padding: 60px 20px; }
+  .testimonial-list { flex-direction: column; gap: 50px; }
+  .section-title { font-size: 28px; }
+  .testimonial h3 { font-size: 18px; }
+  .testimonial p { font-size: 14px; }
+  .author { margin-top: 0; }
+}
+
+@media (max-width: 600px) {
+  .section-title { font-size: 24px; margin-bottom: 40px; }
+  .testimonial h3 { font-size: 17px; }
+  .testimonial p { font-size: 13.5px; }
+  .author img { width: 45px; height: 45px; }
+}
+
+@media (max-width: 480px) {
+  .testimonials { padding: 40px 15px; }
+  .section-title { font-size: 22px; }
+  .testimonial h3 { font-size: 16px; }
+  .testimonial p { font-size: 13px; }
+  .author-info strong { font-size: 13px; }
+  .author-info span { font-size: 11px; }
+}
+:root {
+  --container-width: 1200px; 
+  --accent-color: #F8B4A6;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #fff;
+  color: #666;
+}
+
+.contact-container, .footer-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact {
+  padding: 100px 0;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.contact-image { flex: 1.2; }
+.contact-image img {
+  width: 100%;
+  border-radius: 45px;
+  display: block;
+}
+
+.contact-text { flex: 1; }
+.contact-text h2 {
+  font-size: 38px;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.main-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.sub-desc {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.email-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #FDEEEB; 
+  background-color: #FEF9F8;
+  padding: 8px 8px 8px 25px;
+  border-radius: 50px;
+}
+
+.email-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent; 
+}
+
+.email-box input::placeholder {
+  color: #F8B4A6;
+  opacity: 0.8;
+}
+
+.btn-send {
+  width: 42px;
+  height: 42px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Footer Section --- */
+.footer {
+  background-color: #0c0c0c;
+  padding: 80px 0 40px;
+  color: #fff;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.footer-col.brand h3 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li { margin-bottom: 15px; }
+.footer-col a {
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover { color: #fff; }
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  padding-top: 40px;
+  color: #444;
+  font-size: 12px;
+}
+
+/* ======================================================
+    BREAKPOINTS RESPONSIVE
+   ====================================================== */
+
+@media (min-width: 1200px) {
+  .contact-text h2 { font-size: 42px; }
+  .footer-col.brand h3 { font-size: 24px; }
+}
+
+@media (max-width: 992px) {
+  .contact-container { flex-direction: column; gap: 40px; }
+  .contact { padding: 80px 0; }
+  .contact-text h2 { font-size: 32px; }
+  .footer-columns { flex-wrap: wrap; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .contact { padding: 60px 0; }
+  .contact-text h2 { font-size: 28px; }
+  .main-desc { font-size: 14px; }
+  .footer-columns { flex-direction: column; gap: 30px; }
+  .footer-col h4 { font-size: 15px; }
+}
+
+@media (max-width: 600px) {
+  .contact { padding: 50px 0; }
+  .contact-text h2 { font-size: 24px; }
+  .main-desc { font-size: 13.5px; }
+  .sub-desc { font-size: 13px; }
+  .footer { padding: 60px 0 30px; }
+  .footer-bottom { font-size: 11px; }
+}
+
+@media (max-width: 480px) {
+  .contact { padding: 40px 0; }
+  .contact-text h2 { font-size: 22px; }
+  .main-desc { font-size: 13px; }
+  .footer-col h4 { font-size: 14px; }
+  .footer-col a { font-size: 13px; }
 }
